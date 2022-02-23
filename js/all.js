@@ -8,6 +8,7 @@ const sortSelect = document.querySelector('.sort-select');
 const tableThead = document.querySelector('.js-sort-advanced');
 const fliterTextArray = ['上價','中價','下價','平均價','交易量'];
 const pagination = document.querySelector('.pagination');
+const searchCropName = document.querySelector('#js-crop-name');
 let data;
 let tidyData;
 let typeData;
@@ -22,8 +23,6 @@ let dataStart;
 let dataEnd;
 let pageNumberStart;
 let pageNumberEnd;
-
-
 
 //axios 接ＡＰＩ
 const getData = () => {
@@ -58,6 +57,7 @@ allPage.addEventListener('keypress',(e)=>{
         calcPageQuantity(newData);
         calcDataRange(clickPageNumber);
         renderList(newData,dataStart,dataEnd);
+        cropInput.value='';
     }
 })
 
@@ -70,10 +70,17 @@ search.addEventListener('click',(e) => {
     calcPageQuantity(newData);
     calcDataRange(clickPageNumber);
     renderList(newData,dataStart,dataEnd);
+    cropInput.value=''; //搜尋完除輸入欄位
 }) 
     
 //渲染列表  
 const renderList = (newData,dataStart,dataEnd)=>{
+    if(cropInput.value !== ''){
+        searchCropName.innerHTML = `您搜尋${typeBtnText()}裡有「${cropInput.value}」的結果為`;
+    }else if(cropInput.value ==''){
+        searchCropName.innerHTML = `您搜尋「${typeBtnText()}」的結果為`;
+    }
+
     for(let i = dataStart; i < dataEnd ; i++){
         str+=
             `
@@ -331,4 +338,9 @@ function allThNoStyle(){
     fliterTextArray.forEach((item)=>{
         clickThNoStyle(item);
     })
+}
+
+function typeBtnText(){
+    const btnText = document.querySelector('.button-group > .btn-warning');
+    return btnText.textContent
 }
