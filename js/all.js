@@ -310,7 +310,7 @@ function calcPageNumStartToEnd(clickPageNumber){
                 pageNumber+=`<li class="page-item active"><a class="page-link pagination-custom" data-index="${i}" href="#">${i}</a></li>`;
             }
             if(i !== clickPageNumber){
-                pageNumber+=`<li class="page-item"><a class="page-lin pagination-customk" data-index="${i}" href="#">${i}</a></li>`;
+                pageNumber+=`<li class="page-item"><a class="page-lin pagination-custom" data-index="${i}" href="#">${i}</a></li>`;
             }
         }
         return pageNumber;
