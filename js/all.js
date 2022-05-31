@@ -98,13 +98,13 @@ const renderList = (newData,dataStart,dataEnd)=>{
     if(newData.length>0){
         allPagination = `
                     <li class="page-item js-previous">
-                        <a class="page-link" data-act="js-previous" href="#" aria-label="Previous">
+                        <a class="page-link pagination-custom" data-act="js-previous" href="#" aria-label="Previous">
                             <span data-act="js-previous" aria-hidden="false">&laquo;</span>
                         </a>
                     </li>
                     ${calcPageNumStartToEnd(clickPageNumber)}
                     <li class="page-item js-next">
-                        <a class="page-link" data-act="js-next"  href="#" aria-label="Next">
+                        <a class="page-link pagination-custom" data-act="js-next"  href="#" aria-label="Next">
                             <span data-act="js-next" aria-hidden="false">&raquo;</span>
                         </a>
                     </li>
@@ -282,10 +282,10 @@ function calcPageNumStartToEnd(clickPageNumber){
         pageNumberEnd = pageQuantity;
         for(let i = pageNumberStart; i <= pageNumberEnd ; i++){
             if(i == clickPageNumber){
-                pageNumber+=`<li class="page-item active"><a class="page-link" data-index="${i}" href="#">${i}</a></li>`;
+                pageNumber+=`<li class="page-item active"><a class="page-link pagination-custom" data-index="${i}" href="#">${i}</a></li>`;
             }
             if(i !== clickPageNumber){
-                pageNumber+=`<li class="page-item"><a class="page-link" data-index="${i}" href="#">${i}</a></li>`;
+                pageNumber+=`<li class="page-item"><a class="page-link pagination-custom" data-index="${i}" href="#">${i}</a></li>`;
             }
         }
         return pageNumber;
@@ -307,10 +307,10 @@ function calcPageNumStartToEnd(clickPageNumber){
         }
         for(let i = pageNumberStart; i <= pageNumberEnd ; i++){
             if(i == clickPageNumber){
-                pageNumber+=`<li class="page-item active"><a class="page-link" data-index="${i}" href="#">${i}</a></li>`;
+                pageNumber+=`<li class="page-item active"><a class="page-link pagination-custom" data-index="${i}" href="#">${i}</a></li>`;
             }
             if(i !== clickPageNumber){
-                pageNumber+=`<li class="page-item"><a class="page-link" data-index="${i}" href="#">${i}</a></li>`;
+                pageNumber+=`<li class="page-item"><a class="page-lin pagination-customk" data-index="${i}" href="#">${i}</a></li>`;
             }
         }
         return pageNumber;
