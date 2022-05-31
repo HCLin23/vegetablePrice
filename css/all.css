@@ -179,8 +179,16 @@ th:hover{
   color: white;
 }
 
-.pagination a:hover{
-  color: white;
-  background-color: #0d6efd;
+.pagination-custom{
+  color:#899e39;
 }
-
+.pagination-custom:hover{
+  background-color: #899e39;
+  color:white;
+}
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #899e39;
+  border-color: #899e39;
+}
