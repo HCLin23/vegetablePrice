@@ -143,7 +143,7 @@ const filterNoCropName = (data) =>{
 //種類是否有選
 const checkTypeChoose = ()=>{
     if($('.button-group button').hasClass('btn-warning') == false){
-            alert('請先選擇類別～～唷');
+            alert('請先選擇類別唷！');
             return;
     }
 }
@@ -166,7 +166,7 @@ const textFilterTool = (typeData) => {
         str =   
                 `
                 <tr>
-                    <td colspan="7" class="text-center">ＳＯＲＲＹ～查無資料～～～</td>
+                    <td colspan="7" class="text-center">抱歉～查無資料～</td>
                 </tr>
                 `;
     }
